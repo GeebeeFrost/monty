@@ -45,6 +45,7 @@ typedef struct instruction_s
  * @line: read line
  * @cmd: command (first argument)
  * @arg: argument for command
+ * @fp: file pointer
  *
  * Description: information about each instruction line
  */
@@ -54,6 +55,7 @@ typedef struct line_s
 	char *line;
 	char *cmd;
 	char *arg;
+	FILE *fp;
 } line_t;
 extern line_t data;
 
