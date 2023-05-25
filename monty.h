@@ -72,5 +72,6 @@ void nop(stack_t **, unsigned int);
 
 int _getline(char **lineptr, size_t *n, FILE *stream);
 void free_stack(stack_t **);
+size_t stack_len(const stack_t *);
 
 #endif /* MONTY_H */

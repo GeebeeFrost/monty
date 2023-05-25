@@ -31,6 +31,7 @@ void (*_select(char *op))(stack_t **, unsigned int)
 		{"pall", print_all},
 		{"pint", print_top},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 

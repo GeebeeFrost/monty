@@ -38,3 +38,37 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 	(*lineptr)[chars_read] = '\0';
 	return (chars_read);
 }
+
+/**
+ * stack_len - computes number of elements in a stack
+ * @stack: pointer to the top of the stack
+ *
+ * Return: Number of nodes in the list
+ */
+size_t stack_len(const stack_t *stack)
+{
+	size_t count = 0;
+
+	while (stack)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
+}
+
+/**
+ * free_stack - frees a stack
+ * @stack: address of pointer to the top of the stack
+ */
+void free_stack(stack_t **stack)
+{
+	stack_t *temp = *stack;
+
+	while (temp)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+}

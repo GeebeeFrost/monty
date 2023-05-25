@@ -100,3 +100,30 @@ void pop(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	free(temp);
 }
+
+/**
+ * swap - swaps the top two elements of a stack
+ * @stack: address of pointer to top of the stack
+ * @line_number: instruction line number
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = *stack, *sec;
+
+	if (!*stack || stack_len(*stack) < 2)
+	{
+		free(data.line);
+		free_stack(stack);
+		fclose(data.fp);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	sec = (*stack)->next;
+	temp->next = sec->next;
+	temp->prev = sec;
+	sec->prev = NULL;
+	if (sec->next)
+		sec->next->prev = temp;
+	sec->next = temp;
+	*stack = sec;
+}
