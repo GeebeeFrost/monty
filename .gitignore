@@ -1,0 +1,8 @@
+# Utility files
+*.swp
+
+# Test files
+bytecodes/
+
+# Executable
+monty
