@@ -38,10 +38,10 @@ int main(int ac, char **av)
 		}
 		if (execute_instruction(&stack) == -1)
 		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", data.num, data.cmd);
 			free(line);
 			fclose(fp);
 			free_stack(&stack);
-			fprintf(stderr, "L%d: unknown instruction %s\n", data.num, data.cmd);
 			exit(EXIT_FAILURE);
 		}
 		free(line);
