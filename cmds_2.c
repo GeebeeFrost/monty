@@ -9,7 +9,7 @@
 void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *sec, *temp = *stack;
-	
+
 	if (!*stack || stack_len(*stack) < 2)
 	{
 		free_stack(stack);
