@@ -74,10 +74,29 @@ void print_top(stack_t **stack, unsigned int line_number)
 	if (!*stack)
 	{
 		free(data.line);
-		free_stack(stack);
 		fclose(data.fp);
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * pop - removes the top element of a stack
+ * @stack: address of pointer to top element
+ * @line_number: instruction line number
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = *stack;
+
+	if (!*stack)
+	{
+		free(data.line);
+		fclose(data.fp);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	*stack = (*stack)->next;
+	free(temp);
 }

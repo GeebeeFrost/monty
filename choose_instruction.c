@@ -30,6 +30,7 @@ void (*_select(char *op))(stack_t **, unsigned int)
 		{"push", push},
 		{"pall", print_all},
 		{"pint", print_top},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
