@@ -48,7 +48,7 @@ void push(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * print_all - prints all the values on a stack
+ * print_all - prints all the values on a stack when command is pall
  * @stack: address of pointer to top element
  * @line_number: instruction line number
  */
@@ -62,4 +62,22 @@ void print_all(stack_t **stack, unsigned int line_number)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
+}
+
+/**
+ * print_top - prints value at top of stack when command is pint
+ * @stack: address of pointer to top element
+ * @line_number: instruction line number
+ */
+void print_top(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack)
+	{
+		free(data.line);
+		free_stack(stack);
+		fclose(data.fp);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }

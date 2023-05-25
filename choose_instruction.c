@@ -29,6 +29,7 @@ void (*_select(char *op))(stack_t **, unsigned int)
 	instruction_t options[] = {
 		{"push", push},
 		{"pall", print_all},
+		{"pint", print_top},
 		{NULL, NULL}
 	};
 
