@@ -59,9 +59,12 @@ typedef struct line_s
 } line_t;
 extern line_t data;
 
+/* Processing functions */
 int split_line(void);
 int execute_instruction(stack_t **);
 void (*_select(char *))(stack_t **, unsigned int);
+
+/* Instruction functions */
 void push(stack_t **, unsigned int);
 void print_all(stack_t **, unsigned int);
 void print_top(stack_t **, unsigned int);
@@ -71,7 +74,9 @@ void add(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
 void divide(stack_t **, unsigned int);
+void mul(stack_t **, unsigned int);
 
+/* Utility functions */
 int _getline(char **lineptr, size_t *n, FILE *stream);
 void free_stack(stack_t **);
 size_t stack_len(const stack_t *);
