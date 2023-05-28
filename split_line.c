@@ -13,7 +13,7 @@ int split_line(void)
 
 	if (strcmp(data.line, "\n") == 0)
 		return (0);
-	for (i = 0; data.line[i] != '\n'; i++)
+	for (i = 0; data.line[i] != '\n' && data.line[i] != '#'; i++)
 	{
 		if (data.line[i] != ' ')
 		{
@@ -24,6 +24,8 @@ int split_line(void)
 	if (all_spaces)
 		return (0);
 	data.cmd = strtok(data.line, delim);
+	if (data.cmd[0] == '#')
+		return (0);
 	data.arg = strtok(NULL, delim);
 	return (1);
 }
