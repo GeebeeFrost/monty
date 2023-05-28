@@ -70,6 +70,7 @@ void swap(stack_t **, unsigned int);
 void add(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
+void divide(stack_t **, unsigned int);
 
 int _getline(char **lineptr, size_t *n, FILE *stream);
 void free_stack(stack_t **);

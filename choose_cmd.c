@@ -35,6 +35,7 @@ void (*_select(char *op))(stack_t **, unsigned int)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", divide},
 		{NULL, NULL}
 	};
 
