@@ -75,6 +75,7 @@ void nop(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
 void divide(stack_t **, unsigned int);
 void mul(stack_t **, unsigned int);
+void mod(stack_t **, unsigned int);
 
 /* Utility functions */
 int _getline(char **lineptr, size_t *n, FILE *stream);
